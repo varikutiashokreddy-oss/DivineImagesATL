@@ -1,0 +1,105 @@
+﻿@using DivineImagesATL.Web.Models
+@{
+    var site = ViewData["SiteContent"] as SiteContent ?? new SiteContent();
+    var pageTitle = (ViewData["Title"] as string) ?? site.Brand.Name;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@pageTitle | @site.Brand.Name</title>
+    <meta name="description" content="@site.Brand.Tagline" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav-shell">
+            <a class="brand" href="/">
+                <span class="brand-mark">@site.Brand.LogoText</span>
+                <span class="brand-copy">
+                    <strong>@site.Brand.Name</strong>
+                    <small>@site.Brand.Tagline</small>
+                </span>
+            </a>
+
+            <nav class="site-nav">
+                @foreach (var item in site.Header.NavItems)
+                {
+                    <a href="@item.Url">@item.Text</a>
+                }
+            </nav>
+
+            <a class="btn btn-primary btn-sm" href="@site.Header.PrimaryButtonUrl">
+                @site.Header.PrimaryButtonText
+            </a>
+        </div>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        <section class="footer-top">
+            <div class="container footer-top-grid">
+                <div>
+                    <p class="eyebrow">Schedule Today</p>
+                    <h2>@site.Footer.CallToActionTitle</h2>
+                    <p>@site.Footer.CallToActionText</p>
+                </div>
+                <div class="footer-top-actions">
+                    <a class="btn btn-primary" href="/contact-us">Contact Us</a>
+                    <a class="btn btn-secondary" href="tel:@site.Contact.Phone">@site.Contact.Phone</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer-main">
+            <div class="container footer-grid">
+                <div>
+                    <h3>@site.Brand.Name</h3>
+                    <p>@site.Brand.Tagline</p>
+                    <p><strong>Phone:</strong> @site.Contact.Phone</p>
+                    <p><strong>Fax:</strong> @site.Contact.Fax</p>
+                    <p><strong>Email:</strong> <a href="mailto:@site.Contact.Email">@site.Contact.Email</a></p>
+                </div>
+
+                <div>
+                    <h4>Navigation</h4>
+                    <ul class="footer-list">
+                        @foreach (var item in site.Header.NavItems)
+                        {
+                            <li><a href="@item.Url">@item.Text</a></li>
+                        }
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Visit Us</h4>
+                    <p>@site.Contact.AddressLine1</p>
+                    <p>@site.Contact.AddressLine2</p>
+                    <p>@site.Contact.OfficeHours</p>
+                    <p><a href="@site.Contact.MapUrl" target="_blank" rel="noopener">Open Map</a></p>
+                </div>
+
+                <div>
+                    <h4>Community</h4>
+                    <p class="badge-line">@site.Footer.VeteranText</p>
+                    <p><a href="@site.Contact.FacebookUrl" target="_blank" rel="noopener">Facebook</a></p>
+                    <p><a href="@site.Contact.InstagramUrl" target="_blank" rel="noopener">Instagram</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer-bottom">
+            <div class="container footer-bottom-row">
+                <p>@site.Footer.Copyright</p>
+            </div>
+        </section>
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

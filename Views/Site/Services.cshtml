@@ -1,0 +1,41 @@
+﻿@model ServicesPageContent
+
+<section class="page-hero">
+    <div class="container narrow">
+        <h1>@Model.Hero.Title</h1>
+        <p class="lead">@Model.Hero.Subtitle</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="cards cards-4">
+            @foreach (var item in Model.ServiceHighlights)
+            {
+                <div class="card compact-card">
+                    <h3>@item</h3>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="section alt">
+    <div class="container">
+        <div class="cards cards-2">
+            @foreach (var service in Model.ServiceDetails)
+            {
+                <div class="card service-card">
+                    <h2>@service.Title</h2>
+                    <p>@service.Description</p>
+                    <ul class="feature-list">
+                        @foreach (var item in service.Items)
+                        {
+                            <li>@item</li>
+                        }
+                    </ul>
+                </div>
+            }
+        </div>
+    </div>
+</section>

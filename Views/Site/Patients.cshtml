@@ -1,0 +1,66 @@
+﻿@model PatientsPageContent
+
+<section class="page-hero">
+    <div class="container narrow">
+        <h1>@Model.Hero.Title</h1>
+        <p class="lead">@Model.Hero.Subtitle</p>
+        <div class="actions center">
+            <a class="btn btn-primary" href="@Model.RegistrationFormUrl">@Model.RegistrationFormText</a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="cards cards-3">
+            @foreach (var block in Model.VisitBlocks)
+            {
+                <div class="card">
+                    <h2>@block.Title</h2>
+                    <p>@block.Description</p>
+                    @if (block.Bullets.Any())
+                    {
+                        <ul class="feature-list">
+                            @foreach (var bullet in block.Bullets)
+                            {
+                                <li>@bullet</li>
+                            }
+                        </ul>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="section alt">
+    <div class="container narrow">
+        <div class="section-heading">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-list">
+            @foreach (var faq in Model.Faqs)
+            {
+                <details class="faq-item">
+                    <summary>@faq.Question</summary>
+                    <p>@faq.Answer</p>
+                </details>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="card cta-card">
+            <div>
+                <h2>@Model.BottomCtaTitle</h2>
+                <p>@Model.BottomCtaText</p>
+            </div>
+            <div class="cta-card-actions">
+                <a class="btn btn-primary" href="@Model.BottomCtaUrl">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>

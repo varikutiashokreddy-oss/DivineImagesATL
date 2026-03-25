@@ -1,0 +1,128 @@
+﻿@model HomePageContent
+
+<section class="hero">
+    <div class="container hero-grid">
+        <div>
+            <p class="eyebrow">@Model.Hero.Eyebrow</p>
+            <h1>@Model.Hero.Title</h1>
+            <p class="lead">@Model.Hero.Subtitle</p>
+
+            <div class="actions">
+                <a class="btn btn-primary" href="@Model.Hero.PrimaryButtonUrl">@Model.Hero.PrimaryButtonText</a>
+                <a class="btn btn-secondary" href="@Model.Hero.SecondaryButtonUrl">@Model.Hero.SecondaryButtonText</a>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <h3>Why patients choose us</h3>
+            <ul class="feature-list">
+                <li>Fast scheduling and responsive support</li>
+                <li>Transparent self-pay options</li>
+                <li>Clear, patient-friendly communication</li>
+                <li>Comfort-focused diagnostic environment</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="cards cards-3">
+            @foreach (var action in Model.QuickActions)
+            {
+                <a class="card action-card" href="@action.Url" @(action.IsExternal ? "target=\"_blank\" rel=\"noopener\"" : "")>
+                    <h3>@action.Title</h3>
+                    <p>@action.Subtitle</p>
+                </a>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="section alt">
+    <div class="container">
+        <div class="section-heading">
+            <h2>@Model.PricingTitle</h2>
+            <p>@Model.PricingSubtitle</p>
+        </div>
+
+        <div class="cards cards-2">
+            @foreach (var package in Model.PricingPackages)
+            {
+                <div class="card price-card">
+                    <h3>@package.Title</h3>
+                    <p>@package.Description</p>
+                    <div class="price">@package.StartingPrice</div>
+                    <a class="btn btn-secondary" href="@package.CtaUrl">@package.CtaText</a>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container split">
+        <div class="card">
+            <h2>@Model.Insurance.Title</h2>
+            <p>@Model.Insurance.Subtitle</p>
+            <ul class="feature-list">
+                @foreach (var plan in Model.Insurance.AcceptedPlans)
+                {
+                    <li>@plan</li>
+                }
+            </ul>
+            <p class="muted">@Model.Insurance.SelfPayNote</p>
+        </div>
+
+        <div class="card">
+            <h2>@Model.Comfort.Title</h2>
+            <p>@Model.Comfort.Subtitle</p>
+            <ul class="feature-list">
+                @foreach (var item in Model.Comfort.Highlights)
+                {
+                    <li>@item</li>
+                }
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="section alt">
+    <div class="container">
+        <div class="section-heading">
+            <h2>@Model.TestimonialsTitle</h2>
+        </div>
+
+        <div class="cards cards-3">
+            @foreach (var testimonial in Model.Testimonials)
+            {
+                <div class="card testimonial-card">
+                    <p class="quote">“@testimonial.Quote”</p>
+                    <h4>@testimonial.Name</h4>
+                    <p class="muted">@testimonial.Role</p>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="card cta-card">
+            <div>
+                <p class="eyebrow">For law firms</p>
+                <h2>@Model.AttorneyHighlight.Title</h2>
+                <p>@Model.AttorneyHighlight.Subtitle</p>
+                <ul class="feature-list">
+                    @foreach (var item in Model.AttorneyHighlight.Highlights)
+                    {
+                        <li>@item</li>
+                    }
+                </ul>
+            </div>
+            <div class="cta-card-actions">
+                <a class="btn btn-primary" href="@Model.AttorneyHighlight.CtaUrl">@Model.AttorneyHighlight.CtaText</a>
+            </div>
+        </div>
+    </div>
+</section>

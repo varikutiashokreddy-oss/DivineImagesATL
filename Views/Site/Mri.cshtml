@@ -1,0 +1,70 @@
+﻿@model MriPageContent
+
+<section class="page-hero">
+    <div class="container narrow">
+        <h1>@Model.Hero.Title</h1>
+        <p class="lead">@Model.Hero.Subtitle</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container narrow">
+        <div class="card">
+            <p>@Model.Intro</p>
+        </div>
+    </div>
+</section>
+
+<section class="section alt">
+    <div class="container">
+        <div class="section-heading">
+            <h2>MRI benefits</h2>
+        </div>
+
+        <div class="cards cards-3">
+            @foreach (var benefit in Model.Benefits)
+            {
+                <div class="card">
+                    <h3>@benefit.Title</h3>
+                    <p>@benefit.Description</p>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Scanning areas</h2>
+        </div>
+
+        <div class="cards cards-3">
+            @foreach (var area in Model.Areas)
+            {
+                <div class="card">
+                    <h3>@area.Title</h3>
+                    <p>@area.Description</p>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="section alt">
+    <div class="container narrow">
+        <div class="section-heading">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-list">
+            @foreach (var faq in Model.Faqs)
+            {
+                <details class="faq-item">
+                    <summary>@faq.Question</summary>
+                    <p>@faq.Answer</p>
+                </details>
+            }
+        </div>
+    </div>
+</section>

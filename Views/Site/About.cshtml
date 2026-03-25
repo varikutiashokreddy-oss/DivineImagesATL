@@ -1,0 +1,30 @@
+﻿@model AboutPageContent
+
+<section class="page-hero">
+    <div class="container narrow">
+        <h1>@Model.Hero.Title</h1>
+        <p class="lead">@Model.Hero.Subtitle</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container split">
+        <div class="card">
+            <h2>@Model.StoryTitle</h2>
+            <p>@Model.Story</p>
+        </div>
+
+        <div class="card">
+            <h2>Our values</h2>
+            <div class="stack">
+                @foreach (var value in Model.Values)
+                {
+                    <div>
+                        <h3>@value.Title</h3>
+                        <p>@value.Description</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
