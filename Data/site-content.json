@@ -1,6 +1,6 @@
 {
   "brand": {
-    "name": "DivineImagesATL Health Imaging",
+    "name": "DivineImagesATL LLC",
     "tagline": "MRI, CT, ultrasound and diagnostic imaging with patient-first care.",
     "logoText": "DATL"
   },
@@ -35,10 +35,10 @@
     "primaryButtonUrl": "/contact-us"
   },
   "footer": {
-    "callToActionTitle": "Call today to schedule your visit",
-    "callToActionText": "Simple scheduling, transparent pricing, and a calm imaging experience.",
-    "copyright": "© 2026 DivineImagesATL Health Imaging. All rights reserved.",
-    "veteranText": "Proudly serving veterans and the broader local community"
+    //"callToActionTitle": "Call today to schedule your visit",
+    //"callToActionText": "Simple scheduling, transparent pricing, and a calm imaging experience.",
+    "copyright": "© 2026 DivineImagesATL LLC. All rights reserved.",
+    "veteranText": "Proudly serving the local atlanta area"
   },
   "contact": {
     "phone": "(678) 555-0144",
@@ -54,7 +54,7 @@
       "eyebrow": "Advanced diagnosis, close to home",
       "title": "Clear answers with compassionate imaging care",
       "subtitle": "We combine modern imaging technology, patient-friendly scheduling, and straightforward pricing so you can move forward with confidence.",
-      "primaryButtonText": "Schedule Appointment",
+      "primaryButtonText": "Contact Us",
       "primaryButtonUrl": "/contact-us",
       "secondaryButtonText": "View Services",
       "secondaryButtonUrl": "/services"
@@ -120,24 +120,24 @@
         "Simple communication before and after your exam"
       ]
     },
-    "testimonialsTitle": "Patient testimonials",
-    "testimonials": [
-      {
-        "name": "Sarah M.",
-        "role": "Recent patient",
-        "quote": "Scheduling was fast, the team was kind, and the visit felt much easier than I expected."
-      },
-      {
-        "name": "James R.",
-        "role": "Veteran patient",
-        "quote": "The staff explained everything clearly and made the process smooth from start to finish."
-      },
-      {
-        "name": "Aisha D.",
-        "role": "Local resident",
-        "quote": "Professional team, clean facility, and a much more transparent price than I had elsewhere."
-      }
-    ],
+    //"testimonialsTitle": "Patient testimonials",
+    //"testimonials": [
+    //  {
+    //    "name": "Sarah M.",
+    //    "role": "Recent patient",
+    //    "quote": "Scheduling was fast, the team was kind, and the visit felt much easier than I expected."
+    //  },
+    //  {
+    //    "name": "James R.",
+    //    "role": "Veteran patient",
+    //    "quote": "The staff explained everything clearly and made the process smooth from start to finish."
+    //  },
+    //  {
+    //    "name": "Aisha D.",
+    //    "role": "Local resident",
+    //    "quote": "Professional team, clean facility, and a much more transparent price than I had elsewhere."
+    //  }
+    //],
     "attorneyHighlight": {
       "title": "Reliable imaging support for personal injury cases",
       "subtitle": "We help law firms move cases forward with efficient scheduling, clear reports, and a straightforward referral process.",
@@ -187,8 +187,8 @@
         ]
       },
       {
-        "title": "Ultrasound",
-        "description": "Real-time imaging with no radiation, used across many diagnostic situations.",
+        "title": "Ultrasounds",
+        "description": "An ultrasound is a safe, non-invasive imaging procedure that uses high-frequency sound waves to create real-time images of the body’s internal organs and structures. Because it uses sound waves instead of radiation, it is an extremely safe and versatile tool. DivineImagesATL LLC offers the following Ultrasound exams:",
         "items": [
           "Abdominal and pelvic ultrasound",
           "Thyroid",
@@ -200,13 +200,14 @@
         ]
       },
       {
-        "title": "Additional Services",
-        "description": "Extended imaging options for cardiovascular and skeletal assessment.",
+        "title": "Echocardiograms",
+        "description": "An echocardiogram is a specialized type of ultrasound that provides a detailed, moving picture of your heart. It uses high-frequency sound waves to create images that show the size, shape, and movement of your heart muscle, chambers, and valves.Your doctor may order an echocardiogram to:",
         "items": [
-          "Echocardiograms",
-          "Bone mineral density",
-          "X-ray imaging",
-          "Cardiac scoring studies"
+          "Assess the overall function of your heart.",
+          "Determine the cause of symptoms like shortness of breath or chest pain.",
+          "Identify abnormalities in the heart’s structure, such as problems with the valves or chambers.",
+          "Evaluate the effectiveness of heart treatments or monitor a known heart condition.",
+          "Detect blood clots or tumors within the heart."
         ]
       }
     ]
@@ -331,7 +332,7 @@
       "subtitle": "A local imaging practice built around clarity, comfort, and dependable service."
     },
     "storyTitle": "Our story",
-    "story": "DivineImagesATL Health Imaging was built around a simple idea: diagnostic care should feel organized, compassionate, and transparent. We serve patients, providers, and legal partners with a consistent focus on image quality, communication, and a calm visit experience.",
+    "story": "DivineImagesATL LLC was built around a simple idea: diagnostic care should feel organized, compassionate, and transparent. We serve patients, providers, and legal partners with a consistent focus on image quality, communication, and a calm visit experience.",
     "values": [
       {
         "title": "Patient-centered care",
