@@ -1,7 +1,7 @@
 {
   "brand": {
-    "name": "DivineImagesATL LLC",
-    "tagline": "MRI, CT, ultrasound and diagnostic imaging with patient-first care.",
+    "name": "Divine Imaging ATL, LLC",
+    "tagline": "Advanced Diagnoses, That Comes To You.",
     "logoText": "DATL"
   },
   "header": {
@@ -18,18 +18,18 @@
         "text": "Patients",
         "url": "/patients"
       },
-      {
-        "text": "Attorneys",
-        "url": "/attorneys"
-      },
+      //{
+      //  "text": "Attorneys",
+      //  "url": "/attorneys"
+      //},
       {
         "text": "About Us",
         "url": "/about-us"
-      },
-      {
-        "text": "MRI",
-        "url": "/mri"
       }
+      //{
+      //  "text": "MRI",
+      //  "url": "/mri"
+      //}
     ],
     "primaryButtonText": "Contact Us",
     "primaryButtonUrl": "/contact-us"
@@ -37,17 +37,17 @@
   "footer": {
     //"callToActionTitle": "Call today to schedule your visit",
     //"callToActionText": "Simple scheduling, transparent pricing, and a calm imaging experience.",
-    "copyright": "© 2026 DivineImagesATL LLC. All rights reserved.",
+    "copyright": "© 2026 Divine Imaging ATL, LLC. All rights reserved.",
     "veteranText": "Proudly serving the local atlanta area"
   },
   "contact": {
-    "phone": "(678) 555-0144",
-    "fax": "(678) 555-0145",
+    "phone":"",
+    //"fax": "(678) 555-0145",
     "email": "DivineImagesATL@gmail.com",
-    "officeHours": "Monday-Friday | 8:00 AM-5:00 PM",
-    "mapUrl": "https://maps.google.com",
-    "facebookUrl": "https://facebook.com",
-    "instagramUrl": "https://instagram.com"
+    "officeHours": "Monday-Friday | 8:00 AM-5:00 PM"
+    //"mapUrl": "https://maps.google.com",
+    //"facebookUrl": "https://facebook.com",
+    //"instagramUrl": "https://instagram.com"
   },
   "home": {
     "hero": {
@@ -65,19 +65,19 @@
         "subtitle": "Preparation details, scheduling guidance, and FAQs before your visit.",
         "url": "/patients",
         "isExternal": false
-      },
-      {
-        "title": "Attorney Information",
-        "subtitle": "Reliable imaging support for personal injury and case documentation.",
-        "url": "/attorneys",
-        "isExternal": false
-      },
-      {
-        "title": "Pay Your Bill Online",
-        "subtitle": "Connect your preferred billing workflow or external portal here.",
-        "url": "https://example.com/pay-bill",
-        "isExternal": true
       }
+      //{
+      //  "title": "Attorney Information",
+      //  "subtitle": "Reliable imaging support for personal injury and case documentation.",
+      //  "url": "/attorneys",
+      //  "isExternal": false
+      //},
+      //{
+      //  "title": "Pay Your Bill Online",
+      //  "subtitle": "Connect your preferred billing workflow or external portal here.",
+      //  "url": "https://example.com/pay-bill",
+      //  "isExternal": true
+      //}
     ],
     "pricingTitle": "Affordable self-pay imaging packages",
     "pricingSubtitle": "Straightforward pricing for non-contrast studies and simple care planning.",
@@ -99,7 +99,7 @@
     ],
     "insurance": {
       "title": "Insurance and payment options",
-      "subtitle": "We work with many major plans and also offer transparent self-pay choices.",
+      "subtitle": "We work with many major plans.",
       "acceptedPlans": [
         "Blue Cross Blue Shield",
         "Aetna",
@@ -107,8 +107,8 @@
         "UnitedHealthcare",
         "Medicare",
         "Medicaid"
-      ],
-      "selfPayNote": "If you do not see your plan listed, or you prefer a direct-pay option, contact the office for a customized quote."
+      ]
+      //"selfPayNote": "If you do not see your plan listed, or you prefer a direct-pay option, contact the office for a customized quote."
     },
     "comfort": {
       "title": "Putting comfort first",
@@ -156,36 +156,35 @@
       "subtitle": "A complete range of diagnostic services delivered in a patient-focused setting."
     },
     "serviceHighlights": [
-      "MRI Scans",
-      "CT Scans",
+      "Pelvic",
+      "Thyroid",
       "General Ultrasound",
-      "Bone Density",
+      "Carotid",
       "Echocardiograms",
-      "X-Rays",
-      "Vascular Ultrasound",
-      "Cardiac Imaging"
+      "Breast",
+      "Small parts"
     ],
     "serviceDetails": [
-      {
-        "title": "MRI Scans",
-        "description": "High-detail imaging for soft tissue, neurological, and orthopedic evaluation.",
-        "items": [
-          "Brain MRI",
-          "Cervical, thoracic and lumbar spine imaging",
-          "Abdomen and pelvis MRI",
-          "Shoulders, wrists, knees, ankles and other orthopedic studies"
-        ]
-      },
-      {
-        "title": "CT Scans",
-        "description": "Fast cross-sectional imaging for bones, internal organs, trauma, and other diagnostic needs.",
-        "items": [
-          "Head and brain CT",
-          "Chest, abdomen and pelvis CT",
-          "Spine CT",
-          "Orthopedic CT studies"
-        ]
-      },
+      //{
+      //  "title": "MRI Scans",
+      //  "description": "High-detail imaging for soft tissue, neurological, and orthopedic evaluation.",
+      //  "items": [
+      //    "Brain MRI",
+      //    "Cervical, thoracic and lumbar spine imaging",
+      //    "Abdomen and pelvis MRI",
+      //    "Shoulders, wrists, knees, ankles and other orthopedic studies"
+      //  ]
+      //},
+      //{
+      //  "title": "CT Scans",
+      //  "description": "Fast cross-sectional imaging for bones, internal organs, trauma, and other diagnostic needs.",
+      //  "items": [
+      //    "Head and brain CT",
+      //    "Chest, abdomen and pelvis CT",
+      //    "Spine CT",
+      //    "Orthopedic CT studies"
+      //  ]
+      //},
       {
         "title": "Ultrasounds",
         "description": "An ultrasound is a safe, non-invasive imaging procedure that uses high-frequency sound waves to create real-time images of the body’s internal organs and structures. Because it uses sound waves instead of radiation, it is an extremely safe and versatile tool. DivineImagesATL LLC offers the following Ultrasound exams:",
@@ -229,23 +228,23 @@
           "Call ahead with questions about fasting, clothing, or prior images"
         ]
       },
-      {
-        "title": "What To Bring",
-        "description": "Bring the essentials needed for check-in and accurate care coordination.",
-        "bullets": [
-          "Doctor referral or imaging order if using insurance",
-          "Photo identification",
-          "Insurance card if applicable",
-          "Previous reports or images when comparison is helpful"
-        ]
-      },
+      //{
+      //  "title": "What To Bring",
+      //  "description": "Bring the essentials needed for check-in and accurate care coordination.",
+      //  "bullets": [
+      //    "Doctor referral or imaging order if using insurance",
+      //    "Photo identification",
+      //    "Insurance card if applicable",
+      //    "Previous reports or images when comparison is helpful"
+      //  ]
+      //},
       {
         "title": "Scheduling and Cost",
         "description": "We aim to keep scheduling simple and pricing easy to understand.",
         "bullets": [
           "Call the office to schedule your appointment",
-          "Insurance eligibility can be reviewed before the visit",
-          "Self-pay pricing is available for straightforward direct-pay options"
+          "Insurance eligibility can be reviewed before the visit"
+          //"Self-pay pricing is available for straightforward direct-pay options"
         ]
       }
     ],
@@ -254,22 +253,22 @@
         "question": "Do I need a doctor's referral?",
         "answer": "If you are using insurance, a valid referral or order is typically required. For some self-pay visits, your team can guide you on next steps."
       },
-      {
-        "question": "How do I schedule an appointment?",
-        "answer": "Call the office directly or use the contact page to request a callback. The staff will help match your exam to an available slot."
-      },
+      //{
+      //  "question": "How do I schedule an appointment?",
+      //  "answer": "Call the office directly or use the contact page to request a callback. The staff will help match your exam to an available slot."
+      //},
       {
         "question": "What insurance plans do you accept?",
-        "answer": "Many major plans are accepted. Contact the office for a benefit check before your appointment."
-      },
-      {
-        "question": "What if I do not have insurance?",
-        "answer": "Transparent self-pay rates are available. Reach out for an exact quote based on the study you need."
-      },
-      {
-        "question": "Do you perform contrast studies?",
-        "answer": "If you offer or do not offer contrast studies, update this answer directly in JSON to match your real workflow."
+        "answer": "All insurance plans are accepted."
       }
+      //{
+      //  "question": "What if I do not have insurance?",
+      //  "answer": "Transparent self-pay rates are available. Reach out for an exact quote based on the study you need."
+      //},
+      //{
+      //  "question": "Do you perform contrast studies?",
+      //  "answer": "If you offer or do not offer contrast studies, update this answer directly in JSON to match your real workflow."
+      //}
     ],
     "bottomCtaTitle": "Have a question before your visit?",
     "bottomCtaText": "Our team can help you prepare, verify information, and choose the best next step.",
@@ -332,7 +331,7 @@
       "subtitle": "A local imaging practice built around clarity, comfort, and dependable service."
     },
     "storyTitle": "Our story",
-    "story": "DivineImagesATL LLC was built around a simple idea: diagnostic care should feel organized, compassionate, and transparent. We serve patients, providers, and legal partners with a consistent focus on image quality, communication, and a calm visit experience.",
+    "story": "Divine Imaging ATL, LLC was built around a simple idea: diagnostic care should feel organized, compassionate, and transparent. We serve patients, providers, and legal partners with a consistent focus on image quality, communication, and a calm visit experience.",
     "values": [
       {
         "title": "Patient-centered care",
