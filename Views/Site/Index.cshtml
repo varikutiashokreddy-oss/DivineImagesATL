@@ -35,9 +35,11 @@
 <section class="section commitment-section">
     <div class="container">
         <div class="commitment-card">
-            <img class="commitment-image"
-                 src="~/images/our-commitment.png"
-                 alt="Our Commitment to You: experienced sonographers, affordable rates, and quick results." />
+            <div class="commitment-scroll">
+                <img class="commitment-image"
+                     src="~/images/our-commitment.png"
+                     alt="Our Commitment to You: experienced sonographers, affordable rates, and quick results." />
+            </div>
         </div>
     </div>
 </section>
@@ -68,3 +70,29 @@
         </div>
     </div>
 </section>
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const scroller = document.querySelector(".commitment-scroll");
+            if (!scroller) return;
+
+            function centerCommitmentImage() {
+                if (window.innerWidth > 768) {
+                    scroller.scrollLeft = 0;
+                    return;
+                }
+
+                const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+                scroller.scrollLeft = maxScroll > 0 ? maxScroll / 2 : 0;
+            }
+
+            centerCommitmentImage();
+
+            let resizeTimer;
+            window.addEventListener("resize", function () {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(centerCommitmentImage, 120);
+            });
+        });
+    </script>
+}
