@@ -558,3 +558,78 @@ h3 {
         padding-bottom: 3rem;
     }
 }
+
+.hero-copy {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-highlights-card {
+    margin-top: 1.75rem;
+    max-width: 560px;
+}
+
+.hero-media {
+    height: 100%;
+}
+
+.hero-image-shell,
+.commitment-card,
+.about-image-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.hero-image,
+.section-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-image {
+    min-height: 460px;
+}
+
+.commitment-section {
+    padding-top: 0;
+}
+
+.commitment-card {
+    padding: 0;
+}
+
+.commitment-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-split {
+    align-items: stretch;
+}
+
+.about-image-card {
+    min-height: 100%;
+}
+
+.section-image {
+    min-height: 420px;
+}
+
+.section-tight-top {
+    padding-top: 0;
+}
+
+@media (max-width: 980px) {
+    .hero-image {
+        min-height: 340px;
+    }
+
+    .section-image {
+        min-height: 320px;
+    }
+}

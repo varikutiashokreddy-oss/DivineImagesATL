@@ -2,7 +2,7 @@
 
 <section class="hero">
     <div class="container hero-grid">
-        <div>
+        <div class="hero-copy">
             <p class="eyebrow">@Model.Hero.Eyebrow</p>
             <h1>@Model.Hero.Title</h1>
             <p class="lead">@Model.Hero.Subtitle</p>
@@ -11,54 +11,36 @@
                 <a class="btn btn-primary" href="@Model.Hero.PrimaryButtonUrl">@Model.Hero.PrimaryButtonText</a>
                 <a class="btn btn-secondary" href="@Model.Hero.SecondaryButtonUrl">@Model.Hero.SecondaryButtonText</a>
             </div>
+
+           @*  <div class="hero-card hero-highlights-card">
+                <h3>Why patients choose us</h3>
+                <ul class="feature-list">
+                    <li>Fast scheduling and responsive support</li>
+                    <li>Clear, patient-friendly communication</li>
+                    <li>Comfort-focused diagnostic environment</li>
+                </ul>
+            </div> *@
         </div>
 
-        <div class="hero-card">
-            <h3>Why patients choose us</h3>
-            <ul class="feature-list">
-                <li>Fast scheduling and responsive support</li>
-@*                 <li>Transparent self-pay options</li>
- *@                <li>Clear, patient-friendly communication</li>
-                <li>Comfort-focused diagnostic environment</li>
-            </ul>
+        <div class="hero-media">
+            <div class="hero-image-shell">
+                <img class="hero-image"
+                     src="~/images/ultrasound-room.jpg"
+                     alt="Sonographer performing an ultrasound examination in a calm and professional imaging room." />
+            </div>
         </div>
     </div>
 </section>
 
-@* <section class="section">
+<section class="section commitment-section">
     <div class="container">
-        <div class="cards cards-3">
-            @foreach (var action in Model.QuickActions)
-            {
-                <a class="card action-card" href="@action.Url" @(action.IsExternal ? "target=\"_blank\" rel=\"noopener\"" : "")>
-                    <h3>@action.Title</h3>
-                    <p>@action.Subtitle</p>
-                </a>
-            }
+        <div class="commitment-card">
+            <img class="commitment-image"
+                 src="~/images/our-commitment.png"
+                 alt="Our Commitment to You: experienced sonographers, affordable rates, and quick results." />
         </div>
     </div>
-</section> *@
-
-@* <section class="section alt">
-    <div class="container">
-        <div class="section-heading">
-            <h2>@Model.PricingTitle</h2>
-            <p>@Model.PricingSubtitle</p>
-        </div>
-
-        <div class="cards cards-2">
-            @foreach (var package in Model.PricingPackages)
-            {
-                <div class="card price-card">
-                    <h3>@package.Title</h3>
-                    <p>@package.Description</p>
-                    <div class="price">@package.StartingPrice</div>
-                    <a class="btn btn-secondary" href="@package.CtaUrl">@package.CtaText</a>
-                </div>
-            }
-        </div>
-    </div>
-</section> *@
+</section>
 
 <section class="section">
     <div class="container split">
@@ -86,43 +68,3 @@
         </div>
     </div>
 </section>
-
-@* <section class="section alt">
-    <div class="container">
-        <div class="section-heading">
-            <h2>@Model.TestimonialsTitle</h2>
-        </div>
-
-        <div class="cards cards-3">
-            @foreach (var testimonial in Model.Testimonials)
-            {
-                <div class="card testimonial-card">
-                    <p class="quote">“@testimonial.Quote”</p>
-                    <h4>@testimonial.Name</h4>
-                    <p class="muted">@testimonial.Role</p>
-                </div>
-            }
-        </div>
-    </div>
-</section> *@
-
-@* <section class="section">
-    <div class="container">
-        <div class="card cta-card">
-            <div>
-                <p class="eyebrow">For law firms</p>
-                <h2>@Model.AttorneyHighlight.Title</h2>
-                <p>@Model.AttorneyHighlight.Subtitle</p>
-                <ul class="feature-list">
-                    @foreach (var item in Model.AttorneyHighlight.Highlights)
-                    {
-                        <li>@item</li>
-                    }
-                </ul>
-            </div>
-            <div class="cta-card-actions">
-                <a class="btn btn-primary" href="@Model.AttorneyHighlight.CtaUrl">@Model.AttorneyHighlight.CtaText</a>
-            </div>
-        </div>
-    </div>
-</section> *@

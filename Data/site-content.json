@@ -41,7 +41,7 @@
     "veteranText": "Proudly serving the local atlanta area"
   },
   "contact": {
-    "phone":"",
+    "phone":"(470)-404-6286 & (470)-404-7387",
     //"fax": "(678) 555-0145",
     "email": "DivineImagesATL@gmail.com",
     "officeHours": "Monday-Friday | 8:00 AM-5:00 PM"
@@ -251,7 +251,7 @@
     "faqs": [
       {
         "question": "Do I need a doctor's referral?",
-        "answer": "If you are using insurance, a valid referral or order is typically required. For some self-pay visits, your team can guide you on next steps."
+        "answer": "If you are using insurance, a valid referral or order is typically required."
       },
       //{
       //  "question": "How do I schedule an appointment?",
