@@ -633,3 +633,131 @@ h3 {
         min-height: 320px;
     }
 }
+
+.story-blend-card {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.story-blend-media {
+    min-height: 100%;
+    background: linear-gradient(180deg, rgba(11,92,171,0.08), rgba(18,163,199,0.04));
+}
+
+.story-blend-image {
+    width: 100%;
+    height: 100%;
+    min-height: 430px;
+    object-fit: cover;
+}
+
+.story-blend-copy {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+    .story-blend-copy p:last-of-type {
+        margin-bottom: 0;
+    }
+
+.story-blend-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.story-highlight-pill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    background: var(--surface-2);
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+.contact-page-stack {
+    display: grid;
+    gap: 1.2rem;
+}
+
+.contact-intro-card {
+    max-width: 860px;
+}
+
+.contact-info-grid-enhanced {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+}
+
+.contact-info-card-enhanced {
+    display: grid;
+    gap: 0.9rem;
+}
+
+.contact-link-list {
+    display: grid;
+    gap: 0.85rem;
+}
+
+.contact-link-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    padding: 0.95rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: linear-gradient(180deg, #ffffff 0%, #f5f8fc 100%);
+    color: var(--primary-dark);
+    font-weight: 700;
+    text-align: center;
+    word-break: break-word;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+    .contact-link-button:hover {
+        text-decoration: none;
+        transform: translateY(-1px);
+        border-color: rgba(11,92,171,0.28);
+        box-shadow: var(--shadow);
+    }
+
+.contact-info-text {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--text);
+}
+
+@media (max-width: 980px) {
+    .story-blend-card,
+    .contact-info-grid-enhanced {
+        grid-template-columns: 1fr;
+    }
+
+    .story-blend-image {
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 720px) {
+    .story-blend-copy {
+        padding: 1.35rem;
+    }
+
+    .contact-link-button {
+        min-height: 58px;
+        font-size: 0.98rem;
+    }
+}

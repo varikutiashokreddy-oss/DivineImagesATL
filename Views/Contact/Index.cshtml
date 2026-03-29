@@ -1,7 +1,15 @@
-﻿@model ContactPageViewModel
+﻿﻿@using System.Linq
+@model ContactPageViewModel
 @{
-    var success = TempData["ContactSuccess"] as string;
     var site = ViewData["SiteContent"] as SiteContent ?? new SiteContent();
+    var phoneNumbers = (site.Contact.Phone ?? string.Empty)
+        .Split('&', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+        .Select(phone => phone.Trim())
+        .Where(phone => !string.IsNullOrWhiteSpace(phone))
+        .ToList();
+
+    var hasAddress = !string.IsNullOrWhiteSpace(site.Contact.AddressLine1)
+        || !string.IsNullOrWhiteSpace(site.Contact.AddressLine2);
 }
 
 <section class="page-hero">
@@ -12,80 +20,76 @@
 </section>
 
 <section class="section">
-    <div class="container split contact-split">
-        <div class="card">
-            <h2>Contact Information</h2>
-            <p>@Model.Page.Intro</p>
+    <div class="container">
+        <div class="contact-page-stack">
+            <div class="card contact-intro-card">
+                <p class="eyebrow">Contact information</p>
+                <h3>Reach Divine Imaging ATL, LLC directly</h3>
+@*                 <p>@Model.Page.Intro</p>
+ *@            </div>
 
-            <div class="stack">
-                <div>
+            <div class="contact-info-grid-enhanced">
+                <div class="card contact-info-card-enhanced">
                     <h3>Call Us</h3>
-                    <p><a href="tel:@site.Contact.Phone">@site.Contact.Phone</a></p>
-@*                     <p>Fax: @site.Contact.Fax</p>
- *@                </div>
+                    <p>Tap a number below to call directly from your phone.</p>
 
-                <div>
+                    <div class="contact-link-list">
+                        @if (phoneNumbers.Count > 0)
+                        {
+                            @foreach (var phone in phoneNumbers)
+                            {
+                                var telHref = "tel:" + phone
+                                    .Replace(" ", string.Empty)
+                                    .Replace("(", string.Empty)
+                                    .Replace(")", string.Empty)
+                                    .Replace("-", string.Empty);
+
+                                <a class="contact-link-button" href="@telHref">@phone</a>
+                            }
+                        }
+                        else
+                        {
+                            <span class="muted">Phone number coming soon.</span>
+                        }
+                    </div>
+                </div>
+
+                <div class="card contact-info-card-enhanced">
                     <h3>Email Us</h3>
-                    <p><a href="mailto:@site.Contact.Email">@site.Contact.Email</a></p>
+                    <p>Send us a message and we will respond as soon as possible.</p>
+
+                    @if (!string.IsNullOrWhiteSpace(site.Contact.Email))
+                    {
+                        <a class="contact-link-button" href="mailto:@site.Contact.Email">@site.Contact.Email</a>
+                    }
+                    else
+                    {
+                        <span class="muted">Email address coming soon.</span>
+                    }
                 </div>
 
-                <div>
-                    <h3>Visit Us</h3>
-                    <p>@site.Contact.AddressLine1</p>
-                    <p>@site.Contact.AddressLine2</p>
-                    <p>@site.Contact.OfficeHours</p>
+                <div class="card contact-info-card-enhanced">
+                    <h3>Office Hours</h3>
+                    <p class="contact-info-text">@site.Contact.OfficeHours</p>
                 </div>
+
+                @if (hasAddress)
+                {
+                    <div class="card contact-info-card-enhanced">
+                        <h3>Visit Us</h3>
+
+                        @if (!string.IsNullOrWhiteSpace(site.Contact.AddressLine1))
+                        {
+                            <p class="contact-info-text">@site.Contact.AddressLine1</p>
+                        }
+
+                        @if (!string.IsNullOrWhiteSpace(site.Contact.AddressLine2))
+                        {
+                            <p class="contact-info-text">@site.Contact.AddressLine2</p>
+                        }
+                    </div>
+                }
             </div>
-        </div>
-
-        <div class="card">
-            <h2>@Model.Page.FormTitle</h2>
-            <p>@Model.Page.FormSubtitle</p>
-
-            @if (!string.IsNullOrWhiteSpace(success))
-            {
-                <div class="alert-success">@success</div>
-            }
-
-            <form method="post" asp-action="Index" asp-controller="Contact" class="contact-form">
-                @Html.AntiForgeryToken()
-
-                <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
-
-                <div class="form-grid">
-                    <div class="field">
-                        <label asp-for="Form.Name"></label>
-                        <input asp-for="Form.Name" class="input" />
-                        <span asp-validation-for="Form.Name" class="field-error"></span>
-                    </div>
-
-                    <div class="field">
-                        <label asp-for="Form.Email"></label>
-                        <input asp-for="Form.Email" class="input" />
-                        <span asp-validation-for="Form.Email" class="field-error"></span>
-                    </div>
-                </div>
-
-                <div class="field">
-                    <label asp-for="Form.Phone"></label>
-                    <input asp-for="Form.Phone" class="input" />
-                    <span asp-validation-for="Form.Phone" class="field-error"></span>
-                </div>
-
-                <div class="field">
-                    <label asp-for="Form.Message"></label>
-                    <textarea asp-for="Form.Message" class="input textarea" rows="7"></textarea>
-                    <span asp-validation-for="Form.Message" class="field-error"></span>
-                </div>
-
-                <div class="checkbox-row">
-                    <input asp-for="Form.AcceptTerms" />
-                    <label asp-for="Form.AcceptTerms">I accept the terms and consent to being contacted.</label>
-                </div>
-                <span asp-validation-for="Form.AcceptTerms" class="field-error"></span>
-
-                <button type="submit" class="btn btn-primary">Submit Message</button>
-            </form>
         </div>
     </div>
 </section>

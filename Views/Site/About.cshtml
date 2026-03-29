@@ -8,16 +8,25 @@
 </section>
 
 <section class="section">
-    <div class="container split about-split">
-        <div class="about-image-card">
-            <img class="section-image"
-                 src="~/images/ultrasound-room.jpg"
-                 alt="Diagnostic ultrasound care delivered in a calm, patient-focused setting." />
-        </div>
+    <div class="container">
+        <div class="story-blend-card">
+            <div class="story-blend-media">
+                <img class="story-blend-image"
+                     src="~/images/ultrasound-room.jpg"
+                     alt="Diagnostic ultrasound care delivered in a calm, patient-focused setting." />
+            </div>
 
-        <div class="card">
-            <h2>@Model.StoryTitle</h2>
-            <p>@Model.Story</p>
+            <div class="story-blend-copy">
+                <p class="eyebrow">Compassionate imaging, personal care</p>
+                <h2>@Model.StoryTitle</h2>
+                <p>@Model.Story</p>
+
+                <div class="story-blend-highlights">
+                    <div class="story-highlight-pill">Patient-first experience</div>
+                    <div class="story-highlight-pill">Clear communication</div>
+                    <div class="story-highlight-pill">Dependable diagnostic care</div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
