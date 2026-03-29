@@ -41,32 +41,93 @@
         @RenderBody()
     </main>
 
+    @{
+        var footerPhones = (site.Contact.Phone ?? string.Empty)
+            .Split('&', StringSplitOptions.RemoveEmptyEntries);
+
+        string ToTelHref(string value)
+        {
+            return string.IsNullOrWhiteSpace(value)
+                ? string.Empty
+                : System.Text.RegularExpressions.Regex.Replace(value, @"[^\d+]", string.Empty);
+        }
+    }
+
     <footer class="site-footer">
         <section class="footer-top">
             <div class="container footer-top-grid">
-                @* <div>
-                    <p class="eyebrow">Schedule Today</p>
-                    <h2>@site.Footer.CallToActionTitle</h2>
-                    <p>@site.Footer.CallToActionText</p>
-                </div> *@
                 <div class="footer-top-actions">
                     <a class="btn btn-primary" href="/contact-us">Contact Us</a>
-@*                     <a class="btn btn-secondary" href="tel:@site.Contact.Phone">@site.Contact.Phone</a>
- *@                </div>
+                </div>
             </div>
         </section>
 
         <section class="footer-main">
             <div class="container footer-grid">
-                <div>
+                <div class="footer-column">
                     <h3>@site.Brand.Name</h3>
-                    <p>Ultrasound and diagnostic imaging with patient-first care</p>
-                    <p><strong>Phone:</strong> @site.Contact.Phone</p>
-@*                     <p><strong>Fax:</strong> @site.Contact.Fax</p>
- *@                    <p><strong>Email:</strong> <a href="mailto:@site.Contact.Email">@site.Contact.Email</a></p>
+                    <p class="footer-copy">Ultrasound and diagnostic imaging with patient-first care</p>
+
+                    <div class="footer-contact-group">
+                        <div class="footer-contact-row">
+                            <span class="footer-label">Phone</span>
+                            <div class="footer-contact-stack">
+                                @if (footerPhones.Length > 0)
+                                {
+                                    @foreach (var rawPhone in footerPhones)
+                                    {
+                                        var phone = rawPhone.Trim();
+
+                                        if (!string.IsNullOrWhiteSpace(phone))
+                                        {
+                                            <a class="footer-contact-link" href="tel:@ToTelHref(phone)">@phone</a>
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    <span class="footer-contact-text">Not available</span>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="footer-contact-row">
+                            <span class="footer-label">Email</span>
+                            <div class="footer-contact-stack">
+                                <a class="footer-contact-link" href="mailto:@site.Contact.Email">@site.Contact.Email</a>
+                            </div>
+                        </div>
+
+                        @if (!string.IsNullOrWhiteSpace(site.Contact.OfficeHours))
+                        {
+                            <div class="footer-contact-row">
+                                <span class="footer-label">Hours</span>
+                                <div class="footer-contact-stack">
+                                    <span class="footer-contact-text footer-hours">@site.Contact.OfficeHours</span>
+                                </div>
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrWhiteSpace(site.Contact.AddressLine1) || !string.IsNullOrWhiteSpace(site.Contact.AddressLine2))
+                        {
+                            <div class="footer-contact-row">
+                                <span class="footer-label">Service</span>
+                                <div class="footer-contact-stack">
+                                    @if (!string.IsNullOrWhiteSpace(site.Contact.AddressLine1))
+                                    {
+                                        <span class="footer-contact-text">@site.Contact.AddressLine1</span>
+                                    }
+                                    @if (!string.IsNullOrWhiteSpace(site.Contact.AddressLine2))
+                                    {
+                                        <span class="footer-contact-text">@site.Contact.AddressLine2</span>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
                 </div>
 
-                <div>
+                <div class="footer-column">
                     <h4>Navigation</h4>
                     <ul class="footer-list">
                         @foreach (var item in site.Header.NavItems)
@@ -76,20 +137,11 @@
                     </ul>
                 </div>
 
-                <div>
+                <div class="footer-column">
                     <h4>We Come to You</h4>
-                    <p>@site.Contact.AddressLine1</p>
-                    <p>@site.Contact.AddressLine2</p>
-                    <p>@site.Contact.OfficeHours</p>
-@*                     <p><a href="@site.Contact.MapUrl" target="_blank" rel="noopener">Open Map</a></p>
- *@             </div>
-
-               @*  <div>
-                    <h4>Community</h4>
-                    <p class="badge-line">@site.Footer.VeteranText</p>
-                    <p><a href="@site.Contact.FacebookUrl" target="_blank" rel="noopener">Facebook</a></p>
-                    <p><a href="@site.Contact.InstagramUrl" target="_blank" rel="noopener">Instagram</a></p>
-                </div> *@
+                    <p class="footer-copy">Mobile diagnostic imaging with convenient scheduling and patient-first support.</p>
+                    <a class="footer-contact-link" href="/contact-us">Request an appointment</a>
+                </div>
             </div>
         </section>
 

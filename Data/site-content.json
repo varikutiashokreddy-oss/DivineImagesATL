@@ -41,13 +41,11 @@
     "veteranText": "Proudly serving the local atlanta area"
   },
   "contact": {
-    "phone":"(470)-404-6286 & (470)-404-7387",
-    //"fax": "(678) 555-0145",
+    "phone": "(470)-404-6286 & (470)-404-7387",
     "email": "DivineImagesATL@gmail.com",
-    "officeHours": "Monday-Friday | 8:00 AM-5:00 PM"
-    //"mapUrl": "https://maps.google.com",
-    //"facebookUrl": "https://facebook.com",
-    //"instagramUrl": "https://instagram.com"
+    "officeHours": "Monday-Friday | 8:00 AM-5:00 PM",
+    "addressLine1": "",
+    "addressLine2": ""
   },
   "home": {
     "hero": {
